@@ -1,0 +1,10 @@
+platform :ios, '11.0'
+
+target 'AlamofireNetwork' do
+
+  use_frameworks!
+
+  pod 'Alamofire', :git => 'https://github.com/Alamofire/Alamofire.git', :branch => 'alamofire5'
+  pod 'SKActivityIndicatorView', '~> 0.1.0'
+
+end
