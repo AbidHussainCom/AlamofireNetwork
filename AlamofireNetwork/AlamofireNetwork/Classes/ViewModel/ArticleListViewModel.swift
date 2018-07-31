@@ -25,7 +25,7 @@ class ArticleListViewModel {
     func getTopArticles() {
         
         self.dataLoadingStarted?()
-        articalProvider.getTopArticles(for: "us") { [weak self] (__articles, __error) in
+        articalProvider.getTopArticles(for: "in") { [weak self] (__articles, __error) in
             
             guard let strongSelf = self else { return }
             strongSelf.dataLoadingEnded?()

@@ -14,9 +14,14 @@ class ArticleListViewController: UITableViewController {
 
     let viewModel = ArticleListViewModel()
     
+    lazy var getTopArticlesLoader: Void = {
+        viewModel.getTopArticles()
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        navigationController?.hidesBarsOnSwipe = true
         tableView.tableFooterView = UITableViewHeaderFooterView()
         
         viewModel.dataLoadingStarted = {
@@ -38,7 +43,7 @@ class ArticleListViewController: UITableViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        viewModel.getTopArticles()
+        _ = getTopArticlesLoader
     }
     
     func showMessage(_ message: String, isSucces: Bool = false) {
